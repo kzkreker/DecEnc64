@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0" prefWidth="510.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="sample.ui.Controller">
+  <children>
+    <TitledPane animated="false" collapsible="false" expanded="true" layoutX="6.0" layoutY="8.0" text="Исходный текст">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="172.0" prefWidth="312.0">
+          <children>
+            <TextArea id="ActCombo" fx:id="InputTextArea" layoutX="5.0" layoutY="4.0" prefWidth="301.0" promptText="" text="ВВедите текст для кодирования/декодирования" wrapText="true" />
+          </children>
+        </AnchorPane>
+      </content>
+    </TitledPane>
+    <TitledPane animated="false" collapsible="false" expanded="true" layoutX="6.0" layoutY="211.0" minWidth="316.0" prefWidth="316.0" text="Результат">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="170.0" prefWidth="580.0">
+          <children>
+            <TextArea id="ActCombo" fx:id="OutputTextArea" editable="false" layoutX="4.0" layoutY="4.0" prefWidth="301.0" wrapText="true" />
+          </children>
+        </AnchorPane>
+      </content>
+    </TitledPane>
+    <TitledPane animated="false" collapsible="false" expanded="true" layoutX="326.0" layoutY="8.0" minWidth="152.0" prefHeight="400.0" prefWidth="173.0" text="Параметры">
+      <content>
+        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="361.9998779296875" prefWidth="169.0">
+          <children>
+            <ComboBox id="ActCombo" fx:id="CodeCombo" layoutX="13.0" layoutY="25.0" prefWidth="140.0" value="UTF-8">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="UTF-8" />
+                  <String fx:value="KOI8-R" />
+                  <String fx:value="US-ASCII" />
+                  <String fx:value="WINDOWS-1251" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <Label layoutX="42.0" layoutY="4.0" text="Кодировка:" />
+            <Label layoutX="20.0" layoutY="48.0" prefHeight="36.0" prefWidth="128.0" text="Кодирование/ Декодирование" textAlignment="CENTER" wrapText="true" />
+            <ComboBox fx:id="ActCombo" layoutX="13.0" layoutY="83.0" prefWidth="140.0" value="Кодирование">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="Кодирование" />
+                  <String fx:value="Декодирование" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+            <Button fx:id="StartButton" layoutX="11.0" layoutY="200.0" mnemonicParsing="false" onAction="#onStartButtonPress" prefHeight="48.0" prefWidth="140.9998779296875" text="Выполнить преобразование!" textAlignment="CENTER" wrapText="true" />
+            <Button fx:id="ClearButton" layoutX="10.0" layoutY="118.0" mnemonicParsing="false" onAction="#onClearButtonPress" prefWidth="140.0" text="Очистить поля ввода" textAlignment="CENTER" wrapText="true" />
+            <Button id="ClearButton" fx:id="InvertButton" layoutX="10.0" layoutY="159.0" mnemonicParsing="false" onAction="#onInvertButtonPress" prefWidth="141.0" text="Инвертировать поля ввода" textAlignment="CENTER" wrapText="true" />
+            <Label fx:id="StatusLabel" alignment="TOP_CENTER" layoutX="2.0" layoutY="258.0" prefHeight="111.0" prefWidth="166.0" text="Статус:" textAlignment="LEFT" textOverrun="ELLIPSIS" underline="false" wrapText="true" />
+            <Separator layoutX="-18.0" layoutY="110.0" prefWidth="200.0" />
+            <Separator layoutX="-20.0" layoutY="254.0" prefWidth="200.0" />
+          </children>
+        </AnchorPane>
+      </content>
+    </TitledPane>
+  </children>
+</AnchorPane>
