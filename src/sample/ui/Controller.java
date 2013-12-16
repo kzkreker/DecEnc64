@@ -27,8 +27,7 @@ public class Controller {
      * который необходимо декодировать/кодировать
      */
 
-    public void onStartButtonPress()
-    {
+    public void onStartButtonPress() {
         //выбираем кодировку
         selectedCharsetItemNumber = CodeCombo.getSelectionModel().getSelectedIndex();
         selectedCharset = Charset.forName(Charsets[selectedCharsetItemNumber]);
@@ -41,47 +40,33 @@ public class Controller {
 
         //обработка действия
         if (selectedAct==0) {
-            try {
-             OutputString =
-                     Base64Coder.encodeString(InputString,selectedCharset);
-             StatusLabel.setText("Статус: кодирование прошло удачно" );
-            }
-            catch (Exception e) {
-                StatusLabel.setText("Статус: " + e.toString());
-            }
-        }
+            OutputString =
+                    Base64Coder.encodeString(InputString,selectedCharset);
+            StatusLabel.setText("Статус: Успех! Кодирование прошло удачно." ); }
         else if (selectedAct==1) {
-
             try {
-             OutputString =
-                        Base64Coder.decodeString(InputString,selectedCharset);
-             StatusLabel.setText("Статус: декодирование прошло удачно" );
-            }
+                 OutputString =
+                            Base64Coder.decodeString(InputString,selectedCharset);
+                 StatusLabel.setText("Статус: Успех! Декодирование прошло удачно." ); }
             catch (Exception e) {
-              StatusLabel.setText("Статус: " + e.toString());
-            }
+                 StatusLabel.setText("Статус: Ошибка! Проверьте строку на соответствие формату Base64."); }
         }
-        OutputTextArea.setText(OutputString);
-    }
+    OutputTextArea.setText(OutputString);}
 
     /**
      *Обработчик нажатия кнопки очистки полей ввода/вывода
      */
 
-    public void onClearButtonPress()
-    {
+    public void onClearButtonPress() {
         OutputTextArea.clear();
-        InputTextArea.clear();
-    }
+        InputTextArea.clear(); }
 
     /**
      *Обработчик нажатия кнопки инверсии полей ввода/вывода
      */
 
-    public void onInvertButtonPress()
-    {
+    public void onInvertButtonPress() {
        InputString = InputTextArea.getText();
        InputTextArea.setText(OutputTextArea.getText());
-       OutputTextArea.setText(InputString);
-    }
+       OutputTextArea.setText(InputString); }
 }
